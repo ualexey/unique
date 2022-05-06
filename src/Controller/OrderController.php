@@ -32,14 +32,14 @@ class OrderController extends AbstractController
 
         $result = $manager->executeStrategy($id);
 
-        if (!$result) {
+        if (!isset($result[$id])) {
             throw new Exception("Order not found");
         }
 
         $response = new Response();
         $response->setCharset('UTF-8');
         $response->headers->set('Content-Type', 'application/json');
-        $response->setContent(json_encode($result));
+        $response->setContent(json_encode($result[$id]));
         return $response;
     }
 }

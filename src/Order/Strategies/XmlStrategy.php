@@ -33,6 +33,7 @@ class XmlStrategy implements OrderStrategyInterface
             }
 
             $this->orderData[(string)$order->id] = [
+                'id' => (string)$order->id,
                 'currency' => $order->currency ? (string)$order->currency : null,
                 'date' => $order->date ? (string)$order->date : null,
                 'total' => $order->total ? (float)$order->total : null,

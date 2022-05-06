@@ -18,15 +18,14 @@ class OrderStrategyTest extends WebTestCase
 
         $data = json_decode($response, true);
 
-//        $this->assertEquals(1, $data[$orderNumber]);
+        $this->assertArrayHasKey('id', $data);
+        $this->assertArrayHasKey('currency', $data);
+        $this->assertArrayHasKey('date', $data);
+        $this->assertArrayHasKey('total', $data);
 
-        $this->assertArrayHasKey('currency', $data[$orderNumber]);
-        $this->assertArrayHasKey('date', $data[$orderNumber]);
-        $this->assertArrayHasKey('total', $data[$orderNumber]);
-
-        if (isset($data[$orderNumber]['product'])) {
-            $this->assertArrayHasKey('title', $data[$orderNumber]['product']);
-            $this->assertArrayHasKey('price', $data[$orderNumber]['product']);
+        if (isset($data['product'])) {
+            $this->assertArrayHasKey('title', $data['product']);
+            $this->assertArrayHasKey('price', $data['product']);
         }
     }
 

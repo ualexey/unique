@@ -25,10 +25,7 @@ class XmlStrategyTest extends TestCase
         $obj = new OrderManager(new XmlStrategy());
         $result = $obj->executeStrategy($id);
 
-        $key = array_keys($result);
-
-        $this->assertEquals($id, $key[0]);
-
+        $this->assertArrayHasKey('id', $result[$id]);
     }
 
 
