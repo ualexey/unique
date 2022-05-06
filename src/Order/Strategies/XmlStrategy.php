@@ -18,7 +18,7 @@ class XmlStrategy implements OrderStrategyInterface
     public function getOrderData(string $id): array
     {
 
-        $orderFile = file_get_contents(dirname(__DIR__, 2) . '\Order\XmlData\\' . $this->ordersFileName);
+        $orderFile = file_get_contents(dirname(__DIR__, 2) . '/Order/XmlData/' . $this->ordersFileName);
 
         $xml = simplexml_load_string($orderFile);
 
