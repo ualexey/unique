@@ -23,6 +23,7 @@ class XmlStrategyTest extends TestCase
 
 
 
+
         $id = 1;
 
         $obj = new OrderManager(new XmlStrategy());
