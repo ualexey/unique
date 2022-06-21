@@ -20,12 +20,17 @@ class XmlStrategyTest extends TestCase
     /** @test */
     public function xlmStrategyTest()
     {
+
+
+
+
         $id = 1;
 
         $obj = new OrderManager(new XmlStrategy());
         $result = $obj->executeStrategy($id);
 
         $this->assertArrayHasKey('id', $result[$id]);
+      
     }
 
 
